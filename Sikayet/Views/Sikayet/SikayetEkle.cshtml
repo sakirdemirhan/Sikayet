@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "SikayetEkle";
+}
+
+@using Sikayet.Models
+@model IEnumerable<Mahalle>
+
+<div class="container">
+
+    <form action="/Sikayet/SikayetEkle" method="post" enctype="multipart/form-data">
+        <h2 class="form-signin-heading" style="color: cornflowerblue; text-align: center">Şikayet</h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" placeholder="Başlık" name="Baslik">
+            <br />
+            <textarea id="Aciklama" class="form-control" name="Aciklama" rows="2" cols="20" placeholder="Şikayetinizi Yazın"></textarea>
+            <br />
+            <select name="Mahalle" class="form-control">
+                @foreach (Mahalle mahalle in Model)
+                {
+                    <option>@mahalle.Adi</option>
+                }
+            </select>
+            <br />
+            <input type="text" class="form-control" placeholder="Sokak" name="Sokak">
+            <br />
+            <input type="file" name="file" id="file" style="width: 100%;" />
+             <br />
+            <button class="btn btn-lg btn-login btn-block" type="submit">Şikayeti Gönder</button>
+
+
+        </div>
+
+    </form>
+
+</div>
+

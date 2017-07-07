@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Iletisim";
+}
+
+@*AIzaSyBzKWo2knokdFKk3A__ax7sg3NxVKsQMYY*@
+
+@section Styles{ 
+
+<style>
+    #map {
+        height: 400px;
+        width: 100%;
+    }
+</style>
+
+}
+<div class="row col-md-12">
+    <div class="col-md-6">
+        <section class="panel">
+            <header class="panel-heading">
+                Adres Harita Görünümü
+            </header>
+            <div class="panel-body">
+                <div id="map"></div>
+            </div>
+        </section>
+
+    </div>
+    <div class="col-md-6">
+        <section class="panel">
+            <header class="panel-heading">
+                İletişim Bilgileri
+
+            </header>
+            <div class="panel-body">
+                <p>
+                    Uğur Mumcu Mahallesi, Atatürk Blv. No:54, 34265 Sultangazi/İstanbul
+                </p>
+                <p>
+                    Web Adres: <a href="http://www.sultangazi.bel.tr">sultangazi.bel.tr</a>
+                </p>
+                <p>
+                    Telefon: (0212) 459 34 34
+                </p>
+                <p>
+                    Fax: (0212) 459 34 11 - (0212) 606 01 59
+                </p>
+                <p>
+                    Email: cagri@sultangazi.bel.tr
+                </p>
+                <hr/>
+                <p>
+                    Ek Hizmet Binası
+                </p>
+                
+                <p>
+                    Cumhuriyet Mahallesi Dersaadet Caddesi No: 23 Sultangazi | İstanbul
+                </p>
+                <p>
+                    Telefon: (0212) 459 34 34
+                </p>
+                <hr />
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<script>
+    function initMap() {
+        var uluru = {lat: 41.106663, lng: 28.871582};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzKWo2knokdFKk3A__ax7sg3NxVKsQMYY&callback=initMap">
+</script>

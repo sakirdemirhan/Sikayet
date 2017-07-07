@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Bilgiler";
+}
+
+
+@using Sikayet.Models
+@model IEnumerable<Kullanici>
+
+<div class="row col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+        <section class="panel">
+            <header class="panel-heading">
+                Kullanıcı Bilgileriniz
+            </header>
+            <div class="panel-body">
+                @foreach (Kullanici kullanici in Model)
+                {
+                    <p>
+                        TC Kimlik Numaranız: @kullanici.TC
+                    </p>
+                    <br/>
+                    <p>
+                        Adınız: @kullanici.Adi
+                    </p>
+                    <br />
+                    <p>
+                        Soyadınız: @kullanici.Soyadi
+                    </p>
+                    <br />
+                    <p>
+                        Email adresiniz: @kullanici.Email
+                    </p>
+                    <br />
+                    <p>
+                        Telefonunuz: @kullanici.Telefon
+                    </p>
+                }
+                
+                
+            </div>
+        </section>
+    </div>
+
+</div>
+
+@*<td>@kullanici.TC</td>
+<td>@kullanici.Adi</td>
+<td>@kullanici.Soyadi</td>
+<td>@kullanici.Email</td>*@

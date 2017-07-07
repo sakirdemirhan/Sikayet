@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "SikayetDetay";
+}
+
+@model Sikayet.Models.Sikayet
+    
+<div class="row col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+        <br />
+        <section class="panel">
+            <header class="panel-heading">
+               Şikayet
+            </header>
+            <div class="panel-body">
+                <p>
+                    <h3>@Model.Baslik</h3>
+                </p>
+                <p>
+                    @Model.Aciklama
+                </p>
+                <hr/>
+
+                
+            </div>
+            <header class="panel-heading">
+                Gönderenin Bilgileri
+            </header>
+            <div class="panel-body">
+                <p>
+                   Ad Soyad: <b>@Model.Kullanici.Adi @Model.Kullanici.Soyadi</b> 
+                </p>
+                <p>
+                    Email: <b>@Model.Kullanici.Email</b>
+                </p>
+                <p>
+                   Telefon: <b>@Model.Kullanici.Telefon</b>
+                </p>
+            </div>
+            
+            <header class="panel-heading">
+                Mahalle Bilgileri
+            </header>
+            <div class="panel-body">
+                <p>
+                    Mahalle: <b>@Model.Mahalle.Adi</b>
+                </p>
+                <p>
+                    Muhtar Adı Soyadı: <b>@Model.Mahalle.Muhtar</b>
+                </p>
+                <p>
+                    Muhtarlık Telefon: <b>@Model.Mahalle.Telefon</b>
+                </p>
+            </div>
+            
+            <header class="panel-heading">
+                Durum
+            </header>
+            <div class="panel-body">
+                @if (Model.Durum == true)
+                {
+                    <span class="badge">Şikayet Beklemede</span>
+                    <a href="/Sikayet/SikayetKaldir/@Model.SikayetId"><span class="label label-danger">Şikayeti Kaldır</span></a>
+                }
+                else
+                {
+                    <p>Bu şikayet kaldırıldı.</p>
+                }
+                
+            </div>
+            
+        </section>
+
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "GirisYap";
+}
+
+<div class="row col-md-12" style="height:500px">
+    <div class="col-md-6">
+        <section class="panel">
+            <div class="panel-body">
+                <form  action="/Home/GirisYap" method="post">
+                    <h2 class="form-signin-heading" style="color: cornflowerblue; text-align: center">Giriş Yapın</h2>
+                    <div class="login-wrap">
+                        <input type="text" class="form-control" placeholder="TC Kimlik Numarası" name="TC">
+                        <br/>
+                        <input type="password" class="form-control" placeholder="Şifre" name="Sifre">
+                        <label class="checkbox">
+                            
+                            <span class="pull-right">
+                                <a data-toggle="modal" href="#myModal">Şifrenizi mi unuttunuz ?</a>
+                            </span>
+                        </label>
+                        <button class="btn btn-lg  btn-primary" type="submit">Giriş Yap</button>
+                        <hr />
+                        <div class="registration">
+                            Üyelik kaydınız yoksa üye olun
+                            <a class="" href="/Home/KayitOl">
+                                . Yeni Üyelik Olştur
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title">Şifrenizi mi unuttunuz ?</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Email adresinizi girin. Şifrenizi buraya göndereceğiz.</p>
+                                    <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                                </div>
+                                <div class="modal-footer">
+                                    <button data-dismiss="modal" class="btn btn-default" type="button">İptal</button>
+                                    <button class="btn btn-success" type="button">Gönder</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal -->
+                </form>
+            </div>
+        </section>
+
+    </div>
+    <div class="col-md-4">
+        <section class="panel col-lg-offset-1">
+            <div class="panel-body">
+                <div class="panel-heading">
+                    <p>
+                        Vatandaş Girişi
+                    </p>
+                </div>
+                <div>
+                    <img src="../../Content/img/vatandas.png"/>
+                </div>
+                
+
+            </div>
+        </section>
+
+    </div>
+    
+</div>
+

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Scripts{
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+}
+
+<div class="row ">
+    <div class="col-lg-12" style="background-color:white">
+        <div class="col-md-6 col-md-offset-3" ->
+
+            <img class="mySlides w3-animate-fading" src="../../Content/img/1.jpg" style="width: 600px; height: 300px">
+            <img class="mySlides w3-animate-fading" src="../../Content/img/2.jpg" style="width: 600px; height: 300px" ">
+            <img class="mySlides w3-animate-fading" src="../../Content/img/3.jpg" style="width: 600px; height: 300px">
+            <img class="mySlides w3-animate-fading" src="../../Content/img/4.jpg" style="width: 600px; height: 300px">
+            <hr />
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <br/>
+        <section class="panel">
+            <header class="panel-heading">
+                Heading goes here
+
+            </header>
+            <div class="panel-body">
+                <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </p>
+                <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+                </p>
+            </div>
+        </section>
+
+    </div>
+    <div class="col-md-6">
+        <br />
+        <section class="panel">
+            <header class="panel-heading">
+                Heading goes here
+
+            </header>
+            <div class="panel-body">
+                <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </p>
+                <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+
+<script>
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 9000);    
+    }
+</script>

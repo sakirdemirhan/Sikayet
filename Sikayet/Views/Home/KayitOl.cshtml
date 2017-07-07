@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "KayitOl";
+}
+
+<div class="container">
+
+    <form  action="/Home/KayitOl" method="post">
+        <h2 class="form-signin-heading" style="color: cornflowerblue; text-align: center">Kayıt Ol</h2>
+        <div class="login-wrap">
+            <input type="text" class="form-control" placeholder="TC Kimlik Numarası" name="TC">
+            <br/>
+            <input type="text" class="form-control" placeholder="Ad" name="Adi">
+            <br />
+            <input type="text" class="form-control" placeholder="Soyad" name="Soyadi">
+            <br />
+            <input type="text" class="form-control" placeholder="Email" name="Email">
+            <br />
+            <input type="text" class="form-control" placeholder="Telefon" name="Telefon">
+            <br />
+            <input type="password" class="form-control" placeholder="Şifre" name="Sifre">
+            <br />
+            <button class="btn btn-lg btn-login btn-block" type="submit">Kayıt Ol</button>
+
+            <div class="registration">
+                Zaten bir üyeliğiniz var mı ?
+                <a class="" href="/Home/GirisYap">
+                    Burdan Giriş Yapın
+                </a>
+            </div>
+            <p><h2><b>@ViewBag.HataMesaji</b></h2></p>
+
+        </div>
+
+    </form>
+
+</div>
