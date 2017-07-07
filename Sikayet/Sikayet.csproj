@@ -148,10 +148,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\htmls\404.html" />
-    <Content Include="Content\htmls\500.html" />
-    <Content Include="Content\htmls\advanced_form_components.html" />
-    <Content Include="Content\htmls\advanced_table.html" />
     <Content Include="Content\assets\advanced-datatable\docs\34cdb56b2c.html" />
     <Content Include="Content\assets\advanced-datatable\docs\DataTable.defaults.columns.html" />
     <Content Include="Content\assets\advanced-datatable\docs\DataTable.defaults.html" />
@@ -1588,12 +1584,6 @@
     <Content Include="Content\assets\xchart\xcharts.js" />
     <Content Include="Content\assets\xchart\xcharts.min.css" />
     <Content Include="Content\assets\xchart\xcharts.min.js" />
-    <Content Include="Content\htmls\basic_table.html" />
-    <Content Include="Content\htmls\blank.html" />
-    <Content Include="Content\htmls\boxed_page.html" />
-    <Content Include="Content\htmls\buttons.html" />
-    <Content Include="Content\htmls\calendar.html" />
-    <Content Include="Content\htmls\chartjs.html" />
     <Content Include="Content\css\bootstrap-reset.css" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap-theme.min.css" />
@@ -1607,21 +1597,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\table-responsive.css" />
     <Content Include="Content\css\tasks.css" />
-    <Content Include="Content\htmls\dropzone.html" />
-    <Content Include="Content\htmls\dynamic_table.html" />
-    <Content Include="Content\htmls\editable_table.html" />
-    <Content Include="Content\htmls\flot_chart.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\htmls\font_awesome.html" />
-    <Content Include="Content\htmls\form_component.html" />
-    <Content Include="Content\htmls\form_validation.html" />
-    <Content Include="Content\htmls\form_wizard.html" />
-    <Content Include="Content\htmls\gallery.html" />
-    <Content Include="Content\htmls\general.html" />
-    <Content Include="Content\htmls\google_maps.html" />
-    <Content Include="Content\htmls\grids.html" />
-    <Content Include="Content\htmls\horizontal_menu.html" />
-    <Content Include="Content\htmls\image_cropping.html" />
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\2.JPG" />
     <Content Include="Content\img\3.jpg" />
@@ -1630,10 +1606,6 @@
     <Content Include="Content\img\gorevli.png" />
     <Content Include="Content\img\sultagazi_logo.png" />
     <Content Include="Content\img\vatandas.png" />
-    <Content Include="Content\htmls\inbox.html" />
-    <Content Include="Content\htmls\index.html" />
-    <Content Include="Content\htmls\inline_editor.html" />
-    <Content Include="Content\htmls\invoice.html" />
     <Content Include="Content\js\additional-methods.min.js" />
     <Content Include="Content\js\advanced-form-components.js" />
     <Content Include="Content\js\all-chartjs.js" />
@@ -1681,23 +1653,6 @@
     <Content Include="Content\js\sparkline-chart.js" />
     <Content Include="Content\js\tasks.js" />
     <Content Include="Content\js\toucheffects.js" />
-    <Content Include="Content\htmls\language_switch_bar.html" />
-    <Content Include="Content\htmls\lock_screen.html" />
-    <Content Include="Content\htmls\login.html" />
-    <Content Include="Content\htmls\morris.html" />
-    <Content Include="Content\htmls\nestable.html" />
-    <Content Include="Content\htmls\product_details.html" />
-    <Content Include="Content\htmls\product_list.html" />
-    <Content Include="Content\htmls\profile-activity.html" />
-    <Content Include="Content\htmls\profile-edit.html" />
-    <Content Include="Content\htmls\profile.html" />
-    <Content Include="Content\htmls\registration.html" />
-    <Content Include="Content\htmls\responsive_table.html" />
-    <Content Include="Content\htmls\search_result.html" />
-    <Content Include="Content\htmls\slider.html" />
-    <Content Include="Content\htmls\todo_list.html" />
-    <Content Include="Content\htmls\widget.html" />
-    <Content Include="Content\htmls\xchart.html" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
