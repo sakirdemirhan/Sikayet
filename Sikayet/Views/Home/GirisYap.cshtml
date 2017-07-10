@@ -14,12 +14,12 @@
                         <br/>
                         <input type="password" class="form-control" placeholder="Şifre" name="Sifre">
                         <label class="checkbox">
-                            
                             <span class="pull-right">
                                 <a data-toggle="modal" href="#myModal">Şifrenizi mi unuttunuz ?</a>
                             </span>
                         </label>
                         <button class="btn btn-lg  btn-primary" type="submit">Giriş Yap</button>
+                        
                         <hr />
                         <div class="registration">
                             Üyelik kaydınız yoksa üye olun
@@ -27,6 +27,7 @@
                                 . Yeni Üyelik Olştur
                             </a>
                         </div>
+                        <label class="label-danger" style="color: white">@ViewBag.HataMesaji</label>
                     </div>
                     <!-- Modal -->
                     <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">

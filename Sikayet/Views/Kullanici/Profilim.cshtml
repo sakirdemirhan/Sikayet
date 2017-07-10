@@ -4,4 +4,49 @@
 }
 @using Sikayet.Models
 @model IEnumerable<Sikayet>
-    
+
+<div class="row col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+        <section class="panel">
+            <header class="panel-heading">
+                Şikayetler
+            </header>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Şikayet No</th>
+                    <th>Başlık</th>
+                    <th>Durum</th>
+                    <th>Detay</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (Sikayet sikayet in Model)
+                {
+
+                    <tr>
+                         <td>@sikayet.SikayetId</td>
+                        <td>@sikayet.Baslik</td>
+                        @if (sikayet.Durum == true)
+                        {
+                            <td><span class="badge">Şikayet Beklemede</span></td>
+                        }
+                        else
+                        {
+                            <td><span class="label label-danger">Şikayet Kaldırıldı</span></td>
+                        }
+                            
+                        <td><a href="/Sikayet/SikayetDetay/@sikayet.SikayetId"><span class="btn btn-primary">Detay</span></a></td>
+                           
+                            
+                    </tr>
+
+
+                }
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+</div>    

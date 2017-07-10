@@ -80,8 +80,8 @@ namespace Sikayet.Controllers
 
                 //// save image in folder
                 file.SaveAs(physicalPath);
-                
-                return physicalPath;
+                string resimUrl = "/Content/img/" + ImageName + "";
+                return resimUrl;
             }
             return "";
         }

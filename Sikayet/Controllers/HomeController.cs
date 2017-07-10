@@ -11,7 +11,7 @@ namespace Sikayet.Controllers
     
     public class HomeController : Controller
     {
-        SikayetContext context = new SikayetContext();
+        SikayetContext _context = new SikayetContext();
         // GET: Home
         
         public ActionResult Index()
@@ -29,7 +29,7 @@ namespace Sikayet.Controllers
         [HttpPost]
         public ActionResult GirisYap(string TC, string Sifre)
         {
-            var kullanici = context.Kullanicis.FirstOrDefault(x => x.TC == TC && x.Sifre == Sifre);
+            var kullanici = _context.Kullanicis.FirstOrDefault(x => x.TC == TC && x.Sifre == Sifre);
             if (kullanici != null)
             {
                 FormsAuthentication.SetAuthCookie(kullanici.Adi, false);
@@ -39,6 +39,10 @@ namespace Sikayet.Controllers
                 Response.SetCookie(tc);
                 return RedirectToAction("Profilim", "Kullanici");
 
+            }
+            else
+            {
+                ViewBag.HataMesaji = "Yanlış TC ya da şifre girdiniz.";
             }
 
 
@@ -55,7 +59,7 @@ namespace Sikayet.Controllers
         [HttpPost]
         public ActionResult GirisYapMod(string kullaniciAdi, string Sifre)
         {
-            var kullanici = context.Moderators.FirstOrDefault(x => x.KullaniciAdi == kullaniciAdi && x.Sifre == Sifre);
+            var kullanici = _context.Moderators.FirstOrDefault(x => x.KullaniciAdi == kullaniciAdi && x.Sifre == Sifre);
             if (kullanici != null)
             {
                 FormsAuthentication.SetAuthCookie(kullanici.KullaniciAdi, false);
@@ -79,8 +83,8 @@ namespace Sikayet.Controllers
             {
                 try
                 {
-                    context.Kullanicis.Add(kullanici);
-                    context.SaveChanges();
+                    _context.Kullanicis.Add(kullanici);
+                    _context.SaveChanges();
                     return RedirectToAction("GirisYap", "Home");
                 }
                 catch
@@ -99,14 +103,22 @@ namespace Sikayet.Controllers
         
         public ActionResult CikisYap()
         {
+            if (Request.Cookies["tc"] != null)
+            {
+                var c = new HttpCookie("tc");
+                c.Expires = DateTime.Now.AddDays(-1);
+                Response.Cookies.Add(c);
+            }
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("GirisYap", "Home");
         }
 
         public ActionResult Iletisim()
         {
             return View();
         }
+
+        
 
     }
 }

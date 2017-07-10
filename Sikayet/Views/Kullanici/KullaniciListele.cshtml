@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "KullaniciListele";
+}
+
+@using Sikayet.Models
+@model IEnumerable<Kullanici>
+
+<div class="row col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+        <section class="panel">
+            <header class="panel-heading">
+                Kullanıcılar
+            </header>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>TC</th>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Sil</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (Kullanici kullanici in Model)
+                {
+
+                    <tr>
+                        <td>@kullanici.TC</td>
+                        <td>@kullanici.Adi</td>
+                        <td>@kullanici.Soyadi</td>
+                        <td>@kullanici.Email</td>
+                        <td>@kullanici.Telefon</td>
+                        <td><a href="/Kullanici/KullaniciSil/@kullanici.TC"><span class="btn btn-danger">Sil</span></a></td>
+                    </tr>
+
+
+                }
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+</div>
+

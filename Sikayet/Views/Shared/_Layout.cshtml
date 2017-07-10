@@ -127,10 +127,18 @@
                         <li>
                             <a href="https://www.facebook.com/sultangazibelediye/"><i class="icon-facebook"></i></a>
                         </li>
-                        <li>
-                            &nbsp;&nbsp;&nbsp;
-                        </li>
-                            <li><a href="/Kullanici/Profilim"> Hoşgeldin, @User.Identity.Name</a></li>
+                            <li>
+                                &nbsp;&nbsp;&nbsp;
+                            </li>
+                            @if (User.IsInRole("uye"))
+                            {
+                                <li><a href="/Kullanici/Profilim"> Hoşgeldin, @User.Identity.Name</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="#"> Hoşgeldin, @User.Identity.Name</a></li>
+                            }
+                            
                         </li>
                         <!-- user login dropdown start-->
                         <li class="dropdown">
@@ -141,7 +149,11 @@
                             </a>
                             <ul class="dropdown-menu extended">
                                 <div class="log-arrow-up"></div>
-                                <li><a href="/Home/Index"><i class="ui-icon-key"></i> Hesap Ayarları</a></li>
+                                @if (User.IsInRole("uye"))
+                                {
+                                    <li><a href="/Kullanici/Hesabim"><i class="ui-icon-key"></i> Hesap Ayarları</a></li>
+                                }
+                                
                                 <li><a href="/Home/CikisYap"><i class="icon-signout"></i> Çıkış Yap</a></li>
                             </ul>
                         </li>
