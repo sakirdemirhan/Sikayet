@@ -6,18 +6,17 @@ namespace Sikayet.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Sikayet")]
-    public partial class Sikayet
+    [Table("SilinmisSikayet")]
+    public partial class SilinmisSikayet
     {
-        public int SikayetId { get; set; }
+        [Key]
+        public int SilinmisId { get; set; }
 
-        [Required]
         [StringLength(11)]
         public string KullaniciTC { get; set; }
 
-        public int MahalleID { get; set; }
+        public int? MahalleID { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string Sokak { get; set; }
 
@@ -30,14 +29,10 @@ namespace Sikayet.Models
         [StringLength(250)]
         public string Fotograf { get; set; }
 
-        public bool Durum { get; set; }
-
         public DateTime? Tarih { get; set; }
 
         [Column(TypeName = "text")]
         public string Yorum { get; set; }
-
-        public virtual Kullanici Kullanici { get; set; }
 
         public virtual Mahalle Mahalle { get; set; }
     }

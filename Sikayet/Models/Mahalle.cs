@@ -13,6 +13,7 @@ namespace Sikayet.Models
         public Mahalle()
         {
             Sikayets = new HashSet<Sikayet>();
+            SilinmisSikayets = new HashSet<SilinmisSikayet>();
         }
 
         public int MahalleId { get; set; }
@@ -29,5 +30,8 @@ namespace Sikayet.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sikayet> Sikayets { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SilinmisSikayet> SilinmisSikayets { get; set; }
     }
 }

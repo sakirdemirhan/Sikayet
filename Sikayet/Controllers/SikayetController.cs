@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Sikayet.App_Classes;
 using Sikayet.Models;
 
 
@@ -13,6 +14,7 @@ namespace Sikayet.Controllers
     public class SikayetController : Controller
     {
         private readonly SikayetContext _context = new SikayetContext();
+        KullaniciGetir kg = new KullaniciGetir();
         // GET: Sikayet
         public ActionResult Index()
         {
@@ -56,17 +58,54 @@ namespace Sikayet.Controllers
             return View(data);
         }
 
+        public ActionResult EskiSikayetDetay(int id)
+        {
+            var data = _context.SilinmisSikayets.FirstOrDefault(x => x.SilinmisId == id);
+            return View(data);
+        }
+
         public ActionResult SikayetKaldir(int id)
         {
+            SilinmisSikayet cop = new SilinmisSikayet();
             var d = _context.Sikayets.FirstOrDefault(x => x.SikayetId == id);
             d.Durum = false;
+            cop.KullaniciTC = d.KullaniciTC;
+            cop.Aciklama = d.Aciklama;
+            cop.Baslik = d.Baslik;
+            cop.Fotograf = d.Fotograf;
+            cop.MahalleID = d.MahalleID;
+            cop.Sokak = d.Sokak;
+            cop.Yorum = d.Yorum;
+            cop.Tarih = d.Tarih;
+            _context.SilinmisSikayets.Add(cop);
+            _context.Sikayets.Remove(d);
             _context.SaveChanges();
-            return Redirect("/Sikayet/SikayetDetay/" + id);
+            return Redirect("/Sikayet/EskiSikayetler/");
         }
         public ActionResult SikayetListele()
         {
             var data = _context.Sikayets.ToList();
             return View(data);
+        }
+
+        public ActionResult EskiSikayetler()
+        {
+            var data = _context.SilinmisSikayets.ToList();
+            return View(data);
+        }
+
+        public ActionResult YorumEkle()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YorumEkle(int id, string yorum)
+        {
+            var sikayet = _context.Sikayets.FirstOrDefault(x => x.SikayetId == id);
+            sikayet.Yorum = yorum;
+            _context.SaveChanges();
+            return Redirect("/Sikayet/SikayetDetay/" + id);
         }
 
         public string FileUpload(HttpPostedFileBase file)

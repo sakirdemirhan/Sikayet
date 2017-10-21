@@ -148,25 +148,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\assets\font-awesome\css\font-awesome-ie7.css" />
-    <Content Include="Content\assets\font-awesome\css\font-awesome-ie7.min.css" />
     <Content Include="Content\assets\font-awesome\css\font-awesome.css" />
     <Content Include="Content\assets\font-awesome\css\font-awesome.min.css" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.svg" />
     <Content Include="Content\css\bootstrap-reset.css" />
-    <Content Include="Content\css\bootstrap-theme.css" />
-    <Content Include="Content\css\bootstrap-theme.min.css" />
-    <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\gallery.css" />
-    <Content Include="Content\css\image-crop.css" />
-    <Content Include="Content\css\navbar-fixed-top.css" />
-    <Content Include="Content\css\owl.carousel.css" />
     <Content Include="Content\css\style-responsive.css" />
     <Content Include="Content\css\style.css" />
-    <Content Include="Content\css\table-responsive.css" />
-    <Content Include="Content\css\tasks.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\2.JPG" />
     <Content Include="Content\img\3.jpg" />
@@ -177,29 +165,14 @@
     <Content Include="Content\img\sultagazi_logo.png" />
     <Content Include="Content\img\vatandas.png" />
     <Content Include="Content\img\veritabani-sikayet.png" />
-    <Content Include="Content\js\bootstrap.js" />
-    <Content Include="Content\js\bootstrap.min.js" />
-    <Content Include="Content\js\common-scripts.js" />
-    <Content Include="Content\js\form-validation-script.js" />
     <Content Include="Content\js\hover-dropdown.js" />
-    <Content Include="Content\js\jquery-1.8.3.min.js" />
-    <Content Include="Content\js\jquery-ui-1.9.2.custom.min.js" />
-    <Content Include="Content\js\jquery.js" />
     <Content Include="Content\js\jquery.scrollTo.min.js" />
-    <Content Include="Content\js\jquery.validate.min.js" />
-    <Content Include="Content\js\modernizr.custom.js" />
     <Content Include="Content\js\respond.min.js" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <None Include="scripts\jquery-2.1.4.intellisense.js" />
-    <Content Include="scripts\jmelosegui.googlemap.js" />
-    <Content Include="scripts\jquery-2.1.4.js" />
-    <Content Include="scripts\jquery-2.1.4.min.js" />
-    <Content Include="scripts\markerclusterer.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Classes\KullaniciGetir.cs" />
     <Compile Include="App_Classes\Rol.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -213,6 +186,8 @@
     <Compile Include="Models\Moderator.cs" />
     <Compile Include="Models\Sikayet.cs" />
     <Compile Include="Models\SikayetContext.cs" />
+    <Compile Include="Models\SilinmisKullanici.cs" />
+    <Compile Include="Models\SilinmisSikayet.cs" />
     <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -226,44 +201,25 @@
     <Content Include="Views\Shared\_viewstart.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.eot" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.ttf" />
     <Content Include="Content\assets\font-awesome\font\fontawesome-webfont.woff" />
     <Content Include="Content\assets\font-awesome\font\FontAwesome.otf" />
-    <Content Include="Content\assets\font-awesome\less\bootstrap.less" />
-    <Content Include="Content\assets\font-awesome\less\core.less" />
-    <Content Include="Content\assets\font-awesome\less\extras.less" />
-    <Content Include="Content\assets\font-awesome\less\font-awesome-ie7.less" />
-    <Content Include="Content\assets\font-awesome\less\font-awesome.less" />
-    <Content Include="Content\assets\font-awesome\less\icons.less" />
-    <Content Include="Content\assets\font-awesome\less\mixins.less" />
-    <Content Include="Content\assets\font-awesome\less\path.less" />
-    <Content Include="Content\assets\font-awesome\less\variables.less" />
-    <Content Include="Content\assets\font-awesome\scss\font-awesome-ie7.scss" />
-    <Content Include="Content\assets\font-awesome\scss\font-awesome.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_bootstrap.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_core.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_extras.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_icons.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_mixins.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_path.scss" />
-    <Content Include="Content\assets\font-awesome\scss\_variables.scss" />
     <Content Include="Views\Home\GirisYap.cshtml" />
     <Content Include="Views\Home\GirisYapMod.cshtml" />
     <Content Include="Views\Home\KayitOl.cshtml" />
     <Content Include="Views\Kullanici\Profilim.cshtml" />
     <Content Include="Views\Sikayet\SikayetEkle.cshtml" />
     <Content Include="Views\Home\Iletisim.cshtml" />
-    <Content Include="scripts\jquery-2.1.4.min.map" />
     <Content Include="Views\Kullanici\Bilgiler.cshtml" />
     <Content Include="Views\Sikayet\SikayetListele.cshtml" />
     <Content Include="Views\Sikayet\SikayetDetay.cshtml" />
     <Content Include="Views\Kullanici\KullaniciListele.cshtml" />
     <Content Include="Views\Kullanici\BilgileriDuzenle.cshtml" />
     <Content Include="Views\Kullanici\Hesabim.cshtml" />
+    <Content Include="Views\Sikayet\EskiSikayetler.cshtml" />
+    <Content Include="Views\Sikayet\EskiSikayetDetay.cshtml" />
+    <Content Include="Views\Kullanici\EskiSikayetler.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

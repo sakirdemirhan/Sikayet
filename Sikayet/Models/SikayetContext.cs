@@ -16,6 +16,8 @@ namespace Sikayet.Models
         public virtual DbSet<Mahalle> Mahalles { get; set; }
         public virtual DbSet<Moderator> Moderators { get; set; }
         public virtual DbSet<Sikayet> Sikayets { get; set; }
+        public virtual DbSet<SilinmisKullanici> SilinmisKullanicis { get; set; }
+        public virtual DbSet<SilinmisSikayet> SilinmisSikayets { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -32,6 +34,18 @@ namespace Sikayet.Models
 
             modelBuilder.Entity<Sikayet>()
                 .Property(e => e.Aciklama)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Sikayet>()
+                .Property(e => e.Yorum)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SilinmisSikayet>()
+                .Property(e => e.Aciklama)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SilinmisSikayet>()
+                .Property(e => e.Yorum)
                 .IsUnicode(false);
         }
     }

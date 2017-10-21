@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "EskiSikayetler";
+}
+
+@using Sikayet.Models
+@model IEnumerable<SilinmisSikayet>
+
+<div class="row col-md-12">
+    <div class="col-md-6 col-md-offset-3">
+        <section class="panel">
+            <header class="panel-heading">
+                Geçmiş Şikayetler
+            </header>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Şikayet No</th>
+                    <th>Başlık</th>
+                    <th>Detay</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (SilinmisSikayet sikayet in Model)
+                {
+
+                    <tr>
+                           
+                        <td>@sikayet.SilinmisId</td>
+                        <td>@sikayet.Baslik</td> 
+                        <td><a href="/Sikayet/EskiSikayetDetay/@sikayet.SilinmisId"><span class="btn btn-primary">Detay</span></a></td>
+                           
+                            
+                    </tr>
+
+
+                }
+
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+</div>
+

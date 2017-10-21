@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Security;
 using System.Web;
@@ -24,16 +25,40 @@ namespace Sikayet.Controllers
             return View(data);
         }
 
+        
+
         public ActionResult KullaniciSil(string id)
         {
+            
+            SilinmisSikayet cop = new SilinmisSikayet();
+            SilinmisKullanici copKullanici = new SilinmisKullanici();
             var sikayetler = _context.Sikayets.Where(x => x.KullaniciTC == id);
-            foreach (var item in sikayetler)
+            foreach (var d in sikayetler.ToList())
             {
-                _context.Sikayets.Remove(item);
+                
+                cop.KullaniciTC = d.KullaniciTC;
+                cop.Aciklama = d.Aciklama;
+                cop.Baslik = d.Baslik;
+                cop.Fotograf = d.Fotograf;
+                cop.MahalleID = d.MahalleID;
+                cop.Sokak = d.Sokak;
+                cop.Yorum = d.Yorum;
+                cop.Tarih = d.Tarih;
+                _context.SilinmisSikayets.Add(cop);
+                _context.Sikayets.Remove(d);
+                _context.SaveChanges();
+
             }
-            _context.SaveChanges();
+            
 
             var kullanici = _context.Kullanicis.FirstOrDefault(x => x.TC == id);
+            copKullanici.TC = kullanici.TC;
+            copKullanici.Adi = kullanici.Adi;
+            copKullanici.Soyadi = kullanici.Soyadi;
+            copKullanici.Email = kullanici.Email;
+            copKullanici.Telefon = kullanici.Telefon;
+            copKullanici.Sifre = kullanici.Sifre;
+            _context.SilinmisKullanicis.Add(copKullanici);
             _context.Kullanicis.Remove(kullanici);
             _context.SaveChanges();
             if (User.IsInRole("uye"))
@@ -79,6 +104,13 @@ namespace Sikayet.Controllers
         {
             string tc = Request.Cookies["tc"].Value.ToString();
             var data = _context.Sikayets.Where(x => x.KullaniciTC == tc).ToList();
+            return View(data);
+        }
+
+        public ActionResult EskiSikayetler()
+        {
+            string tc = Request.Cookies["tc"].Value.ToString();
+            var data = _context.SilinmisSikayets.Where(x => x.KullaniciTC == tc).ToList();
             return View(data);
         }
 
